@@ -1,0 +1,26 @@
+<div class="search-container">
+  <div class="search-input">
+    <mat-icon>search</mat-icon>
+    <input matInput type="text" placeholder="Search">
+  </div>
+
+  <button mat-button mat-flat-button class="filter-btn">
+    <mat-icon>tune</mat-icon>
+    Filter
+  </button>
+
+  <button mat-button mat-flat-button color="accent" class="hire-btn">
+    <mat-icon>add</mat-icon>
+    New hire
+  </button>
+
+</div>
+
+<div class="filter-container">
+  <app-filter-input placeholder="Create on: Jan/10/21 - Jan/28/21" icon="assets/calendar.svg" [options]="['1', '2']" [width]="23"></app-filter-input>
+  <app-filter-input placeholder="Contract type" [options]="['1', '2']"[width]="15"></app-filter-input>
+  <app-filter-input placeholder="Contractor Name" [width]="30"></app-filter-input>
+  <app-filter-input placeholder="Status" [options]="['1', '2']" [width]="15"></app-filter-input>
+
+  <button class="clear-filters" mat-button color="warn"><mat-icon color="warn">delete</mat-icon> Clear filters</button>
+</div>

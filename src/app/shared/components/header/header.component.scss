@@ -1,0 +1,76 @@
+@use '../../../../colors.scss' as colors;
+
+mat-toolbar {
+  justify-content: space-between;
+  background-color: white;
+  height: 108px;
+  padding: 0 60px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+  align-content: center;
+  height: 100%;
+  margin: 0;
+}
+
+.profile-container {
+  display: flex;
+}
+.spacer {
+  align-self: center;
+  border-left: 1px solid #c4c4c4;
+  padding-left: 40px;
+  height: 40px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    color: colors.$gray-regular;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.image-placeholder {
+  height: 65px;
+  width: 65px;
+  background: colors.$gray-strong;
+  border-radius: 50%;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  ul, .profile-container {
+    display: none;
+  }
+
+  mat-toolbar {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+

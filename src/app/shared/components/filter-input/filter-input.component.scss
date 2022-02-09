@@ -1,0 +1,21 @@
+@use '../../../../colors.scss' as colors;
+
+:host {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: colors.$gray-strong;
+  justify-content: space-between;
+}
+
+img {
+  margin-right: 5px;
+}
+
+mat-icon {
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+}

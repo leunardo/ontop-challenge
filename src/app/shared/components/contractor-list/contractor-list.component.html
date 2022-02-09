@@ -1,0 +1,89 @@
+<table>
+  <thead>
+    <tr>
+      <th>Contractor name</th>
+      <th>Type</th>
+      <th>Start date</th>
+      <th>Amount</th>
+      <th class="align-left">Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let contractor of contractorsList; let index=index">
+      <td>
+        <div class="profile-cell">
+          <img class="profile-photo" src="https://randomuser.me/api/portraits/women/{{index + 10}}.jpg">
+          <span>{{ contractor.name }}</span>
+        </div>
+      </td>
+      <td>{{ contractor.type }}</td>
+      <td>{{ contractor.startDate }}</td>
+      <td>${{ contractor.amount }} USD</td>
+      <td class="status-badge">
+        <app-status-badge [status]="contractor.status"></app-status-badge>
+      </td>
+      <td class="actions">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="mobile-list">
+  <div *ngFor="let contractor of contractorsList; let index=index" class="mobile-list-item">
+    <ul>
+      <li>
+        <span><b>Contractor name</b></span>
+        <span>{{ contractor.name }}</span>
+      </li>
+      <li>
+        <span><b>Type</b></span>
+        <span>{{ contractor.type }}</span>
+      </li>
+      <li>
+        <span><b>Start date</b></span>
+        <span>{{ contractor.startDate }}</span>
+      </li>
+      <li>
+        <span><b>Amount</b></span>
+        <span>${{ contractor.amount }} USD</span>
+      </li>
+      <li>
+        <span><b>Status</b></span>
+        <span><app-status-badge [status]="contractor.status"></app-status-badge></span>
+      </li>
+      <li>
+        <span><b>Actions</b></span>
+        <span>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>border_color</mat-icon>
+    <span>Edit</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>gesture</mat-icon>
+    <span>Sign</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>description</mat-icon>
+    <span>View summary</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon color="warn">delete</mat-icon>
+    <span>Delete</span>
+  </button>
+</mat-menu>

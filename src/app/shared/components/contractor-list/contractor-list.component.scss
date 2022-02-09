@@ -1,0 +1,103 @@
+@use '../../../../colors.scss' as colors;
+
+:host {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-top: 30px;
+}
+
+
+table {
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+tr {
+  height: 90px;
+}
+
+td {
+  text-align: center;
+}
+
+tbody tr {
+  background: colors.$gray-light2;
+  border-bottom: 24px solid white;
+}
+
+.profile-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.status-badge {
+  text-align: left;
+}
+
+.actions mat-icon,
+.mobile-list mat-icon {
+  color: colors.$gray-regular3;
+}
+
+.mobile-list {
+  display: none;
+
+  ul {
+    list-style: none;
+    padding: 10px 13px 10px 15px;
+  }
+
+  li {
+    height: 37px;
+    line-height: 37px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    span {
+      align-self: center;
+      width: 50%;
+    }
+  }
+
+  li:nth-of-type(odd) {
+    background: colors.$gray-light2;
+  }
+}
+
+.mobile-list-item {
+  background: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  :host {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mobile-list {
+    display: block;
+  }
+
+  table {
+    display: none;
+  }
+}

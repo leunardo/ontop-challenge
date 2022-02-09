@@ -1,0 +1,40 @@
+:host {
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+  padding: 0 11px;
+  height: 24px;
+
+  &.active {
+    color:  #36CF82;
+    background: rgba(54, 207, 130, 0.18);
+  }
+
+  &.pending {
+    color: #F29D42;
+    background: rgba(242, 157, 66, 0.3);
+  }
+}
+
+.ellipse {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  &.pending {
+    background:#F29D42;
+  }
+
+  &.active {
+    background: #36CF82;
+  }
+}
+
+span {
+  font-weight: bold;
+}
+

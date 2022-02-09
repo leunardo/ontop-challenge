@@ -1,0 +1,80 @@
+@use '../../../../colors.scss' as colors;
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  display: flex;
+  padding: 10px;
+  border-radius: 4px;
+  border: 0.5px solid #989B9B;
+  background: white;
+  width: 70%;
+
+  input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+  }
+
+  mat-icon {
+    color: colors.$gray-regular2;
+  }
+}
+
+.filter-btn {
+  background: colors.$gray-light;
+  color: black;
+}
+
+.hire-btn {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  width: 190px;
+}
+
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.clear-filters {
+  float: right;
+  display: none;
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  .search-input {
+    width: 45%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .clear-filters {
+    display: block;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  app-filter-input {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .search-container,
+  .filter-container {
+    flex-wrap: wrap;
+  }
+
+  .filter-container {
+    justify-content: flex-end;
+  }
+}
